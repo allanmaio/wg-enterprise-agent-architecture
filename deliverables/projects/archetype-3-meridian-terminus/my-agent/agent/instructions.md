@@ -12,7 +12,7 @@ The user did not name specific Apple products, so the watch covers the Apple bra
 
 # Schedule
 
-A check runs daily at 06:00 UTC. It emails only products that newly entered promotion. It sends nothing when there is no new promotion.
+A check runs every 2 minutes. It emails only products that newly entered promotion. It sends nothing when there is no new promotion.
 
 # Email
 

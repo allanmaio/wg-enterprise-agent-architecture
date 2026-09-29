@@ -71,7 +71,7 @@ function alertBody(products: AppleProduct[]): { text: string; html: string } {
     "",
     ...lines.flatMap((line) => [line, ""]),
     "Promotion means Galaxus now lists a previous price or a discount label after an earlier check saw the regular price.",
-    "The daily check runs at 06:00 UTC and only emails new entries.",
+    "The check runs every 2 minutes and only emails new entries.",
   ].join("\n");
 
   const items = products
@@ -83,7 +83,7 @@ function alertBody(products: AppleProduct[]): { text: string; html: string } {
       return `<li><a href="${escapeHtml(product.url)}">${escapeHtml(product.name)}</a> — ${escapeHtml(formatMoney(product.currency, product.price))}${was}</li>`;
     })
     .join("");
-  const html = `<p>These Apple products newly entered promotion on <a href="https://www.galaxus.com">Galaxus</a>:</p><ul>${items}</ul><p>Promotion means Galaxus now lists a previous price or a discount label after an earlier check saw the regular price. The daily check runs at 06:00 UTC and only emails new entries.</p>`;
+  const html = `<p>These Apple products newly entered promotion on <a href="https://www.galaxus.com">Galaxus</a>:</p><ul>${items}</ul><p>Promotion means Galaxus now lists a previous price or a discount label after an earlier check saw the regular price. The check runs every 2 minutes and only emails new entries.</p>`;
   return { text, html };
 }
 
